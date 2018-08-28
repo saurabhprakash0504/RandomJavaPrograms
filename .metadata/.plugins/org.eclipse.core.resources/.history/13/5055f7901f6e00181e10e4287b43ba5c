@@ -1,0 +1,26 @@
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Serializable;
+
+/*public class Employee extends superEmployee {
+	public String firstName;
+	private static final long serialVersionUID = 5462223600l;
+}*/
+
+public class Employee implements Serializable {
+	public String firstName;
+	public String lastName;
+	static String companyName;
+	transient String address;
+	static transient String companyCEO;
+	
+	void readObject(InputStream obj) {
+		this.firstName=null;
+	}
+	
+
+	void writeObject(OutputStream obj) {
+		obj.write(firstName);
+	}
+	
+}

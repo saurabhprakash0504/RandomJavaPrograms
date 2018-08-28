@@ -1,0 +1,9 @@
+import java.util.TreeMap;
+
+public class TreeMapReverse {
+
+	public static void main(String[] args) {
+		TreeMap<Integer,String> h=new TreeMap<>();
+	}
+	
+}

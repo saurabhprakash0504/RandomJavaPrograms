@@ -1,0 +1,58 @@
+package com.example.demo;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import org.glassfish.hk2.api.Immediate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.data.repository.cdi.Eager;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Eager
+@Controller
+@Immediate
+public class SampleController {
+	@Autowired
+	H2ConnectionExample example;
+	
+	@Autowired
+	MainInterface mainInter;
+
+	ApplicationContext context;
+
+	String name;
+	
+	@GET
+	@RequestMapping("/valueCheck")
+	@Produces(MediaType.TEXT_PLAIN)
+	void check(@QueryParam("from") String from) {
+		getContext();
+		 name = example.findById(from);
+		PaymentData pd = new PaymentData(111L, "IFSC", "CardName");
+		MainInterface mainInters = null;
+		mainInters =(MainInterface)context.getBean(name);//getBean(name);
+	/*	 
+		//context.getBean(SomeClass.class);
+		
+		try {
+			
+			//mainInters = (MainInterface) Class.forName(name).newInstance();
+		
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}*/
+		mainInters.process(pd);
+
+	}
+	
+	void getContext(String[] args){
+		ApplicationContext applicationContext =SpringApplication.run(SpringBootDatabaseApplication.class, args);
+			this.context=applicationContext;
+	}
+
+}

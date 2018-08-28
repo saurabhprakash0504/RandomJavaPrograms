@@ -1,0 +1,5 @@
+package com.exaple.demo.dto;
+
+public class Messanger {
+
+}

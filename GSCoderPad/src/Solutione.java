@@ -1,0 +1,35 @@
+class Solutione {
+ 
+      public static void main(String[] args) {
+        int[] ad={0,0};
+       int[] a=getFinalCoordinates("UDDLRL",ad);
+        System.out.println(a[0] +" "+a[1]);
+      }
+
+  
+  
+  private static int[] getFinalCoordinates(String move, int[] initialPosition) {
+    
+    for(int i=0;i<move.length();i++){
+    	System.out.println(initialPosition[0]+ " >>> "+initialPosition[1]);
+      char c=move.charAt(i);
+      if(c=='U'){
+         initialPosition[0]=initialPosition[0]+1;
+         initialPosition[1]=initialPosition[1];
+      }
+      if(c=='D'){
+    	   initialPosition[0]=initialPosition[0]-1;
+           initialPosition[1]=initialPosition[1];
+      }
+      if(c=='R'){
+    	   initialPosition[0]=initialPosition[0];
+           initialPosition[1]=initialPosition[1]+1;
+      }
+      if(c=='L'){
+    	   initialPosition[0]=initialPosition[0];
+           initialPosition[1]=initialPosition[1]-1;
+      }
+    }
+    return initialPosition;
+  }
+}

@@ -1,0 +1,35 @@
+
+public class ProducerConsumer {
+
+	public static void main(String[] args) {
+		CustomBlockingQueue cus=new CustomBlockingQueue();
+	}
+	
+	class Producer extends Thread{
+		CustomBlockingQueue cus;
+		Producer(CustomBlockingQueue cus){
+			this.cus=cus;
+		}
+		
+		public void run() {
+			for(;;) {
+				
+			}
+		}
+		
+	}
+	
+	class Consumer extends Thread{
+		CustomBlockingQueue cus;
+		Consumer(CustomBlockingQueue cus){
+			this.cus=cus;
+		}
+		
+		public void run() {
+			for(;;) {
+				cus.get();
+			}
+		}
+		
+	}
+}

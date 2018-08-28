@@ -1,0 +1,43 @@
+package com.example.demo;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController("SampleController")
+public class SampleController {
+	@Autowired
+	H2ConnectionExample example;
+
+	@Autowired
+	MainInterface mainInter;
+
+	ApplicationContext context;
+	
+	@Autowired
+	PaymentData paymentData;
+	
+	@GET
+	@RequestMapping("/valueCheck")
+	@Produces(MediaType.TEXT_PLAIN)
+	void check(@QueryParam("from") String from) {
+		String	name = example.findById(from);
+		paymentData.cardName="saurabh";
+		paymentData.cardNumber=111L;
+		paymentData.ifscCode="IFSC";
+		//(111L, "IFSC", "CardName");
+		MainInterface mainInters = (MainInterface) context.getBean(name);
+		mainInters.process(paymentData);
+	}
+
+	void getContext(ApplicationContext applicationContext) {
+		this.context = applicationContext;
+	}
+
+}

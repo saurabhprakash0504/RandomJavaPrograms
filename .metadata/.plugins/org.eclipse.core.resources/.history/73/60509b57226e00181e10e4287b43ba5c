@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class WildCardExample {
+
+	public static void main(String[] args) {
+		List<Object> a=new  ArrayList<>();
+		a.add(1);
+		a.add(4);
+		a.add(4.4);
+		method(a);
+	}
+	
+	static void method(List<? extends Number> a) {
+		for(Number s:a) {
+			System.out.println(s);
+		}
+	}
+	
+}

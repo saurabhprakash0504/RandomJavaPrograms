@@ -1,0 +1,8 @@
+package com.java;
+public class CarRepairService implements VehicleRepairService {
+    @Override
+    public void repair() {
+        System.out.println("repair a car");
+    }
+}
+

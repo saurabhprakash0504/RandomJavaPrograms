@@ -1,0 +1,43 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class PaymentData {
+	Long cardNumber;
+	String ifscCode;
+	String cardName;
+
+	
+	public Long getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(Long cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public String getIfscCode() {
+		return ifscCode;
+	}
+
+	public void setIfscCode(String ifscCode) {
+		this.ifscCode = ifscCode;
+	}
+
+	public String getCardName() {
+		return cardName;
+	}
+
+	public void setCardName(String cardName) {
+		this.cardName = cardName;
+	}
+
+
+	PaymentData() {
+		this.cardName = name;
+		this.cardNumber = num;
+		this.ifscCode = ifcs;
+	}
+
+}

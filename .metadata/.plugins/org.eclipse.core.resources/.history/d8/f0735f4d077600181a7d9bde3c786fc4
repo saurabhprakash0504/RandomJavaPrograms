@@ -1,0 +1,26 @@
+package com.question;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		String s="()()()((((())()()()()()";
+		int maxCount=0;
+		int temp=0;
+		for(int i=0;i<s.length();) {
+			char c=s.charAt(i);
+			char d=s.charAt(i+1);
+			if(c=='(' && d==')') {
+				temp++;
+				i=i+2;
+			}
+			else {
+				temp=0;
+				i=i+1;
+			}
+			
+			if(maxCount>temp)
+				maxCount=temp;
+		}
+		System.out.println("prin >> "+maxCount);
+	}
+}

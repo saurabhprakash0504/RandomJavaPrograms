@@ -1,0 +1,71 @@
+package com.exaple.demo.controller;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.apache.catalina.connector.Response;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.exaple.demo.dto.Messanger;
+
+@RestController("MessangerController")
+public class MessangerController {
+
+	static List<Messanger> messangerList = new ArrayList<>();
+
+	@POST
+	@RequestMapping("/addMsg")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	boolean addMsg(@RequestBody Messanger msg) {
+		Messanger tempMsg = new Messanger();
+		tempMsg.setAuthor(msg.getAuthor());
+		tempMsg.setMessageContent(msg.getMessageContent());
+		tempMsg.setMessageId(msg.getMessageId());
+		messangerList.add(tempMsg);
+		return true;
+	}
+
+	@GET
+	@RequestMapping("/getMsg/{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	ResponseEntity<Messanger> retieveMsg(@PathVariable("id") int msgId) {
+		Iterator<Messanger> iter = messangerList.iterator();
+		while (iter.hasNext()) {
+			Messanger tempMsg = new Messanger();
+			Messanger itrMsg = iter.next();
+			if (itrMsg.getMessageId() == msgId) {
+				tempMsg.setAuthor(itrMsg.getAuthor());
+				tempMsg.setMessageContent(itrMsg.getMessageContent());
+				tempMsg.setMessageId(itrMsg.getMessageId());
+				ResponseEntity<Messanger> res = new ResponseEntity<Messanger>(tempMsg, HttpStatus.FOUND);
+				return res;
+			}
+		}
+		return new ResponseEntity<Messanger>(HttpStatus.NOT_FOUND);
+	}
+
+	
+	@GET
+	@RequestMapping("/getAllMsg")
+	//@Consumes(MediaType.APPLICATION_JSON)
+	@Produces("application/xml")
+	ResponseEntity<List<Messanger>> retieveAllMsg() {
+		ResponseEntity re= new ResponseEntity<List<Messanger>>(messangerList,HttpStatus.FOUND);
+		return re;
+	}
+	
+}

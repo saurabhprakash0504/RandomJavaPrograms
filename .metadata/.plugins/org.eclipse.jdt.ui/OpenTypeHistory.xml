@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=Java Project2/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.lang(StringBuilder.class[StringBuilder" modifiers="49" timestamp="1519288836640"/>
+<typeInfo handle="=Java Project2/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.util.concurrent(ConcurrentHashMap.class[ConcurrentHashMap" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.util(PriorityQueue.class[PriorityQueue" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.util.concurrent(PriorityBlockingQueue.class[PriorityBlockingQueue" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.util.concurrent(CountDownLatch.class[CountDownLatch" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.util.concurrent(CopyOnWriteArraySet.class[CopyOnWriteArraySet" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.util.concurrent(DelayQueue.class[DelayQueue" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.lang(ClassNotFoundException.class[ClassNotFoundException" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.lang(NoClassDefFoundError.class[NoClassDefFoundError" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/ext\/nashorn.jar&lt;jdk.nashorn.internal.parser(JSONParser.class[JSONParser" modifiers="33" timestamp="1519288834523"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.util(LinkedHashMap.class[LinkedHashMap" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.io(ObjectInputStream.class[ObjectInputStream" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.io(ObjectOutputStream.class[ObjectOutputStream" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.lang(Object.class[Object" modifiers="33" timestamp="1519288836640"/>
+<typeInfo handle="=DesignPattern/C:\/Program Files\/Java\/jre1.8.0_162\/lib\/rt.jar&lt;java.lang(Class.class[Class" modifiers="49" timestamp="1519288836640"/>
+</typeInfoHistroy>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="demo-1"/>
+<aop-project name="demo-2"/>
+<aop-project name="demo"/>
+<aop-project name="SpringBootDatabase"/>
+<aop-project name="FBMessangerSB"/>
+<aop-project name="SpringBootSample-1"/>
+<aop-project name="SpringBootSample-2"/>
+<aop-project name="SpringBootSample"/>
+<aop-project name="spring-security-example"/>
+<aop-project name="SpringExceptionHandling"/>
+</aop-reference-model>

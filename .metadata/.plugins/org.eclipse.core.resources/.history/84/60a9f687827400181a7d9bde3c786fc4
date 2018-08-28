@@ -1,0 +1,13 @@
+package com.example.demo;
+
+public class PaymentData {
+	
+	PaymentData(Long num,String ifcs,String name){
+		this.cardName=name;
+		this.cardNumber=num;
+		this.ifscCode=ifcs;
+	}
+	Long cardNumber;
+	String ifscCode;
+	String cardName;
+}

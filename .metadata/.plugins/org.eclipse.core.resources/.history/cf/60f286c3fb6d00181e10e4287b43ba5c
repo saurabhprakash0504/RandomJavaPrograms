@@ -1,0 +1,12 @@
+import java.util.concurrent.Callable;
+
+public class CallableExample implements Callable{
+	public static void main(String[] args) {
+		
+	}
+
+	@Override
+	public Integer call() throws INException {
+		return 1;
+	}
+}

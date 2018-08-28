@@ -1,0 +1,23 @@
+
+public class ProducerConsumer {
+
+	public static void main(String[] args) {
+		CustomBlockingQueue cus=new CustomBlockingQueue();
+	}
+	
+	class Producer extends Thread{
+		
+		Producer(){
+			
+		}
+		
+		public void run() {
+			
+		}
+		
+	}
+	
+	class Consumer extends Thread{
+		
+	}
+}

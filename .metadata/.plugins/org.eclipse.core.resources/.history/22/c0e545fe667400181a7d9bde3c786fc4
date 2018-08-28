@@ -1,0 +1,12 @@
+import java.util.TreeMap;
+
+public class TreeMapReverse {
+
+	public static void main(String[] args) {
+		TreeMap<Integer,String> h=new TreeMap<>();
+		h.put(5, "saurabh");
+		h.put(3, "My");
+		h.put(4, "name is ")
+	}
+	
+}

@@ -1,0 +1,17 @@
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class LRUCacheImpl {
+
+	HashMap<Character,Integer> map=new HashMap<>();
+	Queue<Character> q=new LinkedList<>();
+	
+	void put(Character c,Integer i) {
+		if(map.containsKey(c)) {
+			q.remove(c);
+		}
+		
+	}
+	
+}

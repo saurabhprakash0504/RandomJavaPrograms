@@ -1,0 +1,6 @@
+public class TruckRepairService implements VehicleRepairService {
+    @Override
+    public void repair() {
+        System.out.println("repair a truck");
+    }
+}

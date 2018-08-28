@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+
+/*
+ * To execute Java, please define "static void main" on a class
+ * named Solution.
+ *
+ * If you need more classes, simply define them inline.
+ */
+
+class Solution222 {
+
+	public static void main(String[] args) {
+		int[] b = { 4, 5, 6, 7, 1, 4 };
+		int[] a = findPairOfSum(b, 8);
+		for (int j = 0; j < a.length - 1; j = j + 2) {
+			System.out.println(a[j] + " " + a[j + 1]);
+		}
+	}
+
+	static int[] findPairOfSum(int[] a, int n) {
+		ArrayList<Integer> al = new ArrayList<Integer>();
+
+		for (int ii = 0; ii < a.length; ii++) {
+			al.add(a[ii]);
+		}
+
+		ArrayList<Integer> finalal = new ArrayList<Integer>();
+		for (int i = 0; i < al.size(); i++) {
+			int val = al.get(i);
+			int diff = n - val;
+			if (al.contains(diff)) {
+				finalal.add(diff);
+				finalal.add(val);
+				al.remove(i);
+				al.remove(al.indexOf(diff));
+			}
+		}
+		int[] aa = new int[finalal.size()];
+
+		for (int j = 0; j < finalal.size(); j++) {
+			aa[j] = finalal.get(j);
+		}
+
+		return aa;
+	}
+}

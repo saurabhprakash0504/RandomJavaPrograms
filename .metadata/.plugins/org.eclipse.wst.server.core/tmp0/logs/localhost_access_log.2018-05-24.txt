@@ -1,0 +1,12 @@
+127.0.0.1 - - [24/May/2018:13:49:22 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:49:28 +0530] "GET /SpringExceptionHandling/ HTTP/1.1" 404 315
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:50:09 +0530] "GET /SpringExceptionHandling/emp/10 HTTP/1.1" 200 122
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:50:17 +0530] "GET /SpringExceptionHandling/emp/1 HTTP/1.1" 200 3921
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:50:25 +0530] "GET /SpringExceptionHandling/emp/2 HTTP/1.1" 200 302
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:50:33 +0530] "GET /SpringExceptionHandling/emp/3 HTTP/1.1" 404 315
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:50:38 +0530] "GET /SpringExceptionHandling/emp/3 HTTP/1.1" 404 315
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:50:45 +0530] "GET /SpringExceptionHandling/emp/4 HTTP/1.1" 200 308
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:58:08 +0530] "GET /SpringExceptionHandling/emp/1 HTTP/1.1" 200 3935
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:58:11 +0530] "GET /SpringExceptionHandling/emp/1 HTTP/1.1" 200 3935
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:58:11 +0530] "GET /SpringExceptionHandling/emp/3 HTTP/1.1" 404 315
+0:0:0:0:0:0:0:1 - - [24/May/2018:13:58:15 +0530] "GET /SpringExceptionHandling/emp/1 HTTP/1.1" 200 3935

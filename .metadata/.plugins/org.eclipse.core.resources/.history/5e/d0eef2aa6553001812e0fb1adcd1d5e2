@@ -1,0 +1,8 @@
+
+public class ProducerConsumer {
+
+	public static void main(String[] args) {
+		CustomBlockingQueue cus=new CustomBlockingQueue();
+	}
+	
+}

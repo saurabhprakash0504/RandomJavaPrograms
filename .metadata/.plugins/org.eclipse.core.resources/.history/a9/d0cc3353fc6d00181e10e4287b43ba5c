@@ -1,0 +1,13 @@
+
+public class JoinExample {
+
+	public static void main(String[] args) {
+
+	}
+}
+
+class Example2 implements Runnable {
+	public void run() {
+
+	}
+}

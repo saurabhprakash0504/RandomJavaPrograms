@@ -1,0 +1,53 @@
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class PrintNumSequence {
+	public static void main(String[] args) {
+		AtomicInteger atomicInteger = new AtomicInteger(0);
+		new NumPrinter(atomicInteger,0, "MyName").start();// thread0
+		new NumPrinter(atomicInteger,1, "IS").start();// thread1
+		new NumPrinter(atomicInteger,2, "Saurabh").start();// thread2
+
+	}
+}
+
+class NumPrinter extends Thread {
+
+	private AtomicInteger atomicInteger;
+	private int threadNum;
+	private String name;
+
+	public NumPrinter(AtomicInteger atomicInteger, int threadNum,String name) {
+		this.atomicInteger = atomicInteger;
+		this.threadNum = threadNum;
+		this.name=name;
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			synchronized (atomicInteger) {
+				int num = atomicInteger.intValue();
+				// If number is 9 then stop.
+				if (num > 9) {
+					atomicInteger.notifyAll();
+					break;
+				}
+				// 3 is number of threads
+				if ((num % 3) == threadNum) {
+					System.out.println("Thread-" + threadNum + " ---->" + name);
+					num = atomicInteger.incrementAndGet();
+					atomicInteger.notifyAll();
+
+				}
+				else {
+				try {
+					atomicInteger.wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				}
+			}
+		} 
+	}
+}

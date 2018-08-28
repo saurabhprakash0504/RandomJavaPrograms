@@ -1,0 +1,8 @@
+package com.exaple.demo.dto;
+
+public class Messanger {
+
+	String messageContent;
+	int messageId;
+	
+}

@@ -1,0 +1,6 @@
+
+public class CallableExample implements Callable{
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,19 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class CustomBlockingQueue{
+
+	Queue q=new LinkedList<>();
+	int MAX_SIZE=10;
+	public static void main(String[] args) {
+		
+	}
+	
+	void put(Object o){
+		while(q.size()==MAX_SIZE) {
+			q.wait();
+		}
+	}
+	
+	
+}

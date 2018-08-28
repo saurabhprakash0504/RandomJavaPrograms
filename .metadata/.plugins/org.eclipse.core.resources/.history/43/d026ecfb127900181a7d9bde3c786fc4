@@ -1,0 +1,27 @@
+package com.exaple.demo.dto;
+
+public class Messanger {
+
+	String messageContent;
+	int messageId;
+	String author;
+	public String getMessageContent() {
+		return messageContent;
+	}
+	public void setMessageContent(String messageContent) {
+		this.messageContent = messageContent;
+	}
+	public int getMessageId() {
+		return messageId;
+	}
+	public void setMessageId(int messageId) {
+		this.messageId = messageId;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+}

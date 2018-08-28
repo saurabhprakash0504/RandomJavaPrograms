@@ -1,0 +1,4 @@
+package com.java;
+public interface VehicleRepairService {
+    void repair();
+}

@@ -1,0 +1,9 @@
+
+public class JoinExample {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class Example implements Runnable

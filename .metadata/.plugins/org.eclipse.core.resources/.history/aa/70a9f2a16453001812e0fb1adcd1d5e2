@@ -1,0 +1,43 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class CustomBlockingQueue{
+
+	Queue q=new LinkedList<>();
+	int MAX_SIZE=10;
+	public static void main(String[] args) {
+		
+	}
+	
+	void put(Object o){
+		while(true) {
+		while(q.size()==MAX_SIZE) {
+			try {
+				q.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		q.add(o);
+		q.notifyAll();
+		}
+	}
+	
+	
+	Object get() {
+		while(true) {
+			while(q.size()==0) {
+				try {
+					q.wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			Object o=q.remove();
+			q.notifyAll();
+			}
+		}
+	return o;
+		
+}

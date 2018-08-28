@@ -1,0 +1,69 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class CustomBlockingQueue {
+
+	Queue q = new LinkedList<>();
+	int MAX_SIZE = 10;
+
+/*	synchronized void put(Object o) {
+		while (true) {
+			while (q.size() == MAX_SIZE) {
+				try {
+					q.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			if(q.size()==0)
+				q.notifyAll();
+			q.offer(o);
+		}
+	}
+
+	synchronized Object get() {
+		Object o = null;
+		while (true) {
+			
+			while (q.size() == 0) {
+				try {
+					q.wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if(q.size()==MAX_SIZE)
+				q.notifyAll();
+			return q.poll();
+
+		}
+
+	}*/
+
+	
+	public synchronized void enqueue(Type task)
+            throws InterruptedException  {
+        while(this.queue.size() == this.MAX_TASK_IN_QUEUE) {
+            wait();
+        }
+        if(this.queue.size() == EMPTY) {
+            notifyAll();
+        }
+        this.queue.offer(task);
+    }
+
+    public synchronized Type dequeue()
+            throws InterruptedException{
+        while(this.queue.size() == EMPTY){
+            wait();
+        }
+        if(this.queue.size() == this.MAX_TASK_IN_QUEUE){
+            notifyAll();
+        }
+        return this.queue.poll();
+    }
+	
+}

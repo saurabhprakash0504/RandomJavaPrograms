@@ -1,0 +1,31 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class SpringBootDatabaseApplication {
+
+	@Autowired
+	SampleController samplesss;
+	
+	@Autowired
+	VisaInter s;
+	
+	@Autowired
+	static
+	MainInterface mainInter;
+	
+	public static void main(String[] args) {
+		ApplicationContext applicationContext =SpringApplication.run(SpringBootDatabaseApplication.class, args);
+		//String name = example.findById(from);
+		mainInter=(MainInterface)applicationContext.getBean("masteroid");
+		PaymentData pd = new PaymentData(111L, "IFSC", "CardName");
+		mainInter.process(pd);
+		
+		samplesss;
+		
+	}
+}

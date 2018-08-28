@@ -1,0 +1,46 @@
+package com.java;
+
+import org.springframework.beans.factory.config.ServiceLocatorFactoryBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.thymeleaf.exceptions.ConfigurationException;
+
+@Configuration()
+@ComponentScan(basePackages = "config.test")
+public class Config {
+    @Bean 
+    public PropertiesConfiguration configuration(){
+        try {
+            PropertiesConfiguration configuration = new PropertiesConfiguration("example.properties");
+            configuration
+                    .setReloadingStrategy(new FileChangedReloadingStrategy());
+            return configuration;
+        } catch (ConfigurationException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    @Bean
+    public ServiceLocatorFactoryBean serviceLocatorFactoryBean() {
+        ServiceLocatorFactoryBean serviceLocatorFactoryBean = new ServiceLocatorFactoryBean();
+        serviceLocatorFactoryBean
+                .setServiceLocatorInterface(VehicleRepairServiceFactory.class);
+        return serviceLocatorFactoryBean;
+    }
+
+    @Bean
+    public CarRepairService carRepairService() {
+        return new CarRepairService();
+    }
+
+    @Bean
+    public TruckRepairService truckRepairService() {
+        return new TruckRepairService();
+    }
+
+    @Bean
+    public SomeService someService(){
+        return new SomeService();
+    }
+}

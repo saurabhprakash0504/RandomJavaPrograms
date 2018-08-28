@@ -1,0 +1,23 @@
+package com.composition;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		int[] a = { 1, 2, 3, 4, 5 };
+		for (int l = 1; l <= a.length; l++) {
+			for(int j=0;j<a.length;j++) {
+				int len=l;
+				int index=j;
+				while(len>=0) {
+					System.out.print (a[index]+" ");
+					index++;
+					len--;
+					
+				}
+				System.out.print(",");
+			}
+			
+		}
+
+	}
+}

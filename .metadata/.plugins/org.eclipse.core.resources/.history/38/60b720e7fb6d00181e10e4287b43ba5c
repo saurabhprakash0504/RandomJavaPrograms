@@ -1,0 +1,16 @@
+import java.io.IOException;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
+
+public class CallableExample implements Callable{
+	public static void main(String[] args) {
+		CallableExample c=new CallableExample ();
+		FutureTask t=new FutureTask(c);
+		t.run();
+	}
+
+	@Override
+	public Integer call() throws IOException {
+		return 1;
+	}
+}

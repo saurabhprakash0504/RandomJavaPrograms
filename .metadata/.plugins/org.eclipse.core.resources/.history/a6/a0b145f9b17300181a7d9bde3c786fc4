@@ -1,0 +1,21 @@
+package com.java;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Service
+public class SomeService  {
+
+    @Autowired
+    private VehicleRepairServiceFactory factory;
+
+    @Autowired 
+    private PropertiesConfiguration configuration;
+
+
+    public void doSomething() {
+        String service = configuration.getString("service");
+
+        VehicleRepairService vehicleRepairService = factory.getRepairService(service);
+        vehicleRepairService.repair();
+    }
+}

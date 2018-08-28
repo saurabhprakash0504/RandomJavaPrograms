@@ -1,0 +1,8 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class CustomBlockingQueue {
+
+	Queue q=new LinkedList<>();
+	
+}
